@@ -18,7 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('website');
-            $table->unsignedSmallInteger('year_founded', 4)->nullable();
+            $table->unsignedSmallInteger('year_founded');
             $table->string('address_line1');
             $table->string('address_line2')->nullable();
             $table->string('address_city');
