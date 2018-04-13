@@ -1,16 +1,18 @@
 <template>
     <nav>
-        <div>
-            <div>
-                <div>
-                    <router-link to="/" exact>
-                        Home
-                    </router-link>
-                </div>
+        <router-link to="/" exact>
+            Home
+        </router-link>
 
-                <button @click="logout" v-if="isLogged">
-                    Logout
-                </button>
+        <div class="pull-right ">
+            <router-link to="/register" exact v-if="!isLogged">
+                Register
+            </router-link>
+            <router-link to="/login" exact v-if="!isLogged">
+                Login
+            </router-link>
+            <div @click="logout" v-if="isLogged">
+                Logout
             </div>
         </div>
     </nav>

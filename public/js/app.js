@@ -14697,6 +14697,8 @@ module.exports = Cancel;
 //
 //
 //
+//
+//
 
 
 
@@ -16499,8 +16501,6 @@ var Form = function () {
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({});
 
@@ -17789,27 +17789,40 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", [
-    _c("div", [
-      _c("div", [
-        _c(
-          "div",
-          [
-            _c("router-link", { attrs: { to: "/", exact: "" } }, [
-              _vm._v("\n                    Home\n                ")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _vm.isLogged
-          ? _c("button", { on: { click: _vm.logout } }, [
-              _vm._v("\n                Logout\n            ")
-            ])
-          : _vm._e()
-      ])
-    ])
-  ])
+  return _c(
+    "nav",
+    [
+      _c("router-link", { attrs: { to: "/", exact: "" } }, [
+        _vm._v("\n        Home\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "pull-right " },
+        [
+          !_vm.isLogged
+            ? _c("router-link", { attrs: { to: "/register", exact: "" } }, [
+                _vm._v("\n            Register\n        ")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.isLogged
+            ? _c("router-link", { attrs: { to: "/login", exact: "" } }, [
+                _vm._v("\n            Login\n        ")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.isLogged
+            ? _c("div", { on: { click: _vm.logout } }, [
+                _vm._v("\n            Logout\n        ")
+              ])
+            : _vm._e()
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -17982,7 +17995,7 @@ exports = module.exports = __webpack_require__(17)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n", ""]);
 
 // exports
 
@@ -18983,7 +18996,7 @@ exports = module.exports = __webpack_require__(17)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n", ""]);
 
 // exports
 
@@ -18999,16 +19012,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "panel panel-default" },
-    [
-      _c("navbar"),
-      _vm._v(" "),
-      _c("div", { staticClass: "panel-body" }, [_c("router-view")], 1)
-    ],
-    1
-  )
+  return _c("div", [_c("navbar"), _vm._v(" "), _c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,9 +1,7 @@
 <template>
-    <div class="panel panel-default">
+    <div>
         <navbar></navbar>
-        <div class="panel-body">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 
