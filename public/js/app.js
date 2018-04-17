@@ -14699,6 +14699,12 @@ module.exports = Cancel;
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -16077,8 +16083,6 @@ function applyToTag (styleElement, obj) {
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 							name: "home"
@@ -16090,9 +16094,6 @@ function applyToTag (styleElement, obj) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_Form__ = __webpack_require__(21);
-//
-//
-//
 //
 //
 //
@@ -16397,9 +16398,6 @@ var Form = function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_Form__ = __webpack_require__(21);
-//
-//
-//
 //
 //
 //
@@ -17791,35 +17789,59 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
+    { staticClass: "navbar" },
     [
       _c("router-link", { attrs: { to: "/", exact: "" } }, [
         _vm._v("\n        Home\n    ")
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "pull-right " },
-        [
-          !_vm.isLogged
-            ? _c("router-link", { attrs: { to: "/register", exact: "" } }, [
-                _vm._v("\n            Register\n        ")
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          !_vm.isLogged
-            ? _c("router-link", { attrs: { to: "/login", exact: "" } }, [
-                _vm._v("\n            Login\n        ")
-              ])
-            : _vm._e(),
-          _vm._v(" "),
+      _c("ul", { staticClass: "nav" }, [
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            !_vm.isLogged
+              ? _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: { to: "/register", exact: "" }
+                  },
+                  [_vm._v("\n                Register\n            ")]
+                )
+              : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            !_vm.isLogged
+              ? _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: { to: "/login", exact: "" }
+                  },
+                  [_vm._v("\n                Login\n            ")]
+                )
+              : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item text-nowrap" }, [
           _vm.isLogged
-            ? _c("div", { on: { click: _vm.logout } }, [
-                _vm._v("\n            Logout\n        ")
-              ])
+            ? _c(
+                "div",
+                { staticClass: "nav-link", on: { click: _vm.logout } },
+                [_vm._v("\n                Logout\n            ")]
+              )
             : _vm._e()
-        ],
-        1
-      )
+        ])
+      ])
     ],
     1
   )
@@ -18053,56 +18075,54 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "jumbotron" }, [
       _c("h1", [_vm._v("Laravel 5 Vue SPA Authentication")]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("ul", [
-          _c("li", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    "https://blog.pusher.com/build-rest-api-laravel-api-resources/"
-                }
-              },
-              [_vm._v("build rest api laravel api resources")]
-            ),
-            _vm._v(" (Pusher blog)")
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    "https://codeburst.io/api-authentication-in-laravel-vue-spa-using-jwt-auth-d8251b3632e0"
-                }
-              },
-              [_vm._v("api authentication in laravel vue spa using jwt auth")]
-            ),
-            _vm._v(" (Codeburst Medium)")
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    "http://blog.peterplucinski.com/setting-up-jwt-authentication-with-laravel-and-vue-part-1/"
-                }
-              },
-              [
-                _vm._v(
-                  "setting-up-jwt-authentication-with-laravel-and-vue-part-1/"
-                )
-              ]
-            ),
-            _vm._v(" (Peter's blog)")
-          ])
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "https://blog.pusher.com/build-rest-api-laravel-api-resources/"
+              }
+            },
+            [_vm._v("build rest api laravel api resources")]
+          ),
+          _vm._v(" (Pusher blog)")
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "https://codeburst.io/api-authentication-in-laravel-vue-spa-using-jwt-auth-d8251b3632e0"
+              }
+            },
+            [_vm._v("api authentication in laravel vue spa using jwt auth")]
+          ),
+          _vm._v(" (Codeburst Medium)")
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "http://blog.peterplucinski.com/setting-up-jwt-authentication-with-laravel-and-vue-part-1/"
+              }
+            },
+            [
+              _vm._v(
+                "setting-up-jwt-authentication-with-laravel-and-vue-part-1/"
+              )
+            ]
+          ),
+          _vm._v(" (Peter's blog)")
         ])
       ])
     ])
@@ -18274,287 +18294,218 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "h-screen flex justify-center items-center" },
-    [
-      _c("div", { staticClass: "w-full max-w-xs" }, [
-        _c("h1", { staticClass: "text-center mb-6" }, [_vm._v("Todolist")]),
-        _vm._v(" "),
-        _vm.error
-          ? _c(
-              "div",
-              {
-                staticClass:
-                  "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-3",
-                attrs: { role: "alert" }
-              },
-              [
-                _c("span", { staticClass: "block sm:inline" }, [
-                  _vm._v(_vm._s(_vm.error.message))
-                ])
-              ]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            staticClass: "form-card",
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.register($event)
-              },
-              keydown: function($event) {
-                _vm.form.errors.clear($event.target.name)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "mb-4" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("Name")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  { name: "focus", rawName: "v-focus" },
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.name,
-                    expression: "form.name"
-                  }
-                ],
-                staticClass: "form-control",
-                class: { "border-red mb-3": _vm.form.errors.has("name") },
-                attrs: {
-                  id: "name",
-                  type: "text",
-                  name: "name",
-                  placeholder: "Name"
-                },
-                domProps: { value: _vm.form.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "name", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _vm.form.errors.has("name")
-                ? _c("p", { staticClass: "text-red text-xs italic" }, [
-                    _vm._v(_vm._s(_vm.form.errors.get("name")))
-                  ])
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-4" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                  attrs: { for: "username" }
-                },
-                [_vm._v("Email")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.email,
-                    expression: "form.email"
-                  }
-                ],
-                staticClass: "form-control",
-                class: { "border-red mb-3": _vm.form.errors.has("email") },
-                attrs: {
-                  id: "username",
-                  type: "email",
-                  name: "email",
-                  placeholder: "Email"
-                },
-                domProps: { value: _vm.form.email },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "email", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _vm.form.errors.has("email")
-                ? _c("p", { staticClass: "text-red text-xs italic" }, [
-                    _vm._v(_vm._s(_vm.form.errors.get("email")))
-                  ])
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-6" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                  attrs: { for: "password" }
-                },
-                [_vm._v("Password")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.password,
-                    expression: "form.password"
-                  }
-                ],
-                staticClass: "form-control",
-                class: { "border-red mb-3": _vm.form.errors.has("password") },
-                attrs: {
-                  id: "password",
-                  type: "password",
-                  name: "password",
-                  placeholder: "Password"
-                },
-                domProps: { value: _vm.form.password },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "password", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _vm.form.errors.has("password")
-                ? _c("p", { staticClass: "text-red text-xs italic" }, [
-                    _vm._v(_vm._s(_vm.form.errors.get("password")))
-                  ])
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-6" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                  attrs: { for: "password_confirmation" }
-                },
-                [_vm._v("Password confirmation")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.password_confirmation,
-                    expression: "form.password_confirmation"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  id: "password_confirmation",
-                  type: "password",
-                  name: "password_confirmation",
-                  placeholder: "Password confirmation"
-                },
-                domProps: { value: _vm.form.password_confirmation },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(
-                      _vm.form,
-                      "password_confirmation",
-                      $event.target.value
-                    )
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center justify-between" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn-indigo",
-                  class: { "opacity-50 cursor-not-allowed": this.isDisabled },
-                  attrs: { type: "submit", disabled: this.isDisabled }
-                },
-                [
-                  _vm.isLoading
-                    ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
-                    : _vm._e(),
-                  _vm._v("\n                    Register\n                ")
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mt-4 text-sm" },
-              [
-                _vm._v(
-                  "\n                Already have an account ?\n\n                "
-                ),
-                _c(
-                  "router-link",
-                  {
-                    staticClass:
-                      "inline-block font-bold text-indigo hover:text-indigo-darker",
-                    attrs: { to: "/login", exact: "" }
-                  },
-                  [_vm._v("\n                    Log in now\n                ")]
-                )
-              ],
-              1
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "text-center text-grey text-xs" }, [
-      _vm._v("\n            Source code available on "),
+  return _c("div", { staticClass: "row" }, [
+    _c("div", {}, [
+      _vm.error
+        ? _c("div", { attrs: { role: "alert" } }, [
+            _c("span", {}, [_vm._v(_vm._s(_vm.error.message))])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Register")]),
+      _vm._v(" "),
       _c(
-        "a",
+        "form",
         {
-          staticClass: "text-grey",
-          attrs: {
-            href: "https://github.com/guillaumebriday/todolist-frontend-vuejs"
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.register($event)
+            },
+            keydown: function($event) {
+              _vm.form.errors.clear($event.target.name)
+            }
           }
         },
-        [_vm._v("GitHub")]
-      ),
-      _vm._v(".\n        ")
+        [
+          _c("div", {}, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                { name: "focus", rawName: "v-focus" },
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.name,
+                  expression: "form.name"
+                }
+              ],
+              staticClass: "form-control",
+              class: { "border-red mb-3": _vm.form.errors.has("name") },
+              attrs: {
+                id: "name",
+                type: "text",
+                name: "name",
+                placeholder: "Name"
+              },
+              domProps: { value: _vm.form.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "name", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.form.errors.has("name")
+              ? _c("p", {}, [_vm._v(_vm._s(_vm.form.errors.get("name")))])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c("label", { attrs: { for: "username" } }, [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.email,
+                  expression: "form.email"
+                }
+              ],
+              staticClass: "form-control",
+              class: { "border-red mb-3": _vm.form.errors.has("email") },
+              attrs: {
+                id: "username",
+                type: "email",
+                name: "email",
+                placeholder: "Email"
+              },
+              domProps: { value: _vm.form.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "email", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.form.errors.has("email")
+              ? _c("p", {}, [_vm._v(_vm._s(_vm.form.errors.get("email")))])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c("label", { attrs: { for: "password" } }, [_vm._v("Password")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.password,
+                  expression: "form.password"
+                }
+              ],
+              staticClass: "form-control",
+              class: { "border-red mb-3": _vm.form.errors.has("password") },
+              attrs: {
+                id: "password",
+                type: "password",
+                name: "password",
+                placeholder: "Password"
+              },
+              domProps: { value: _vm.form.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.form.errors.has("password")
+              ? _c("p", {}, [_vm._v(_vm._s(_vm.form.errors.get("password")))])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c("label", { attrs: { for: "password_confirmation" } }, [
+              _vm._v("Password confirmation")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.password_confirmation,
+                  expression: "form.password_confirmation"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                id: "password_confirmation",
+                type: "password",
+                name: "password_confirmation",
+                placeholder: "Password confirmation"
+              },
+              domProps: { value: _vm.form.password_confirmation },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.form,
+                    "password_confirmation",
+                    $event.target.value
+                  )
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                class: { "opacity-50 cursor-not-allowed": this.isDisabled },
+                attrs: { type: "submit", disabled: this.isDisabled }
+              },
+              [
+                _vm.isLoading
+                  ? _c("i", { staticClass: "fa fa-spinner fa-spin fa-fw" })
+                  : _vm._e(),
+                _vm._v("\n                    Register\n                ")
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {},
+            [
+              _vm._v(
+                "\n                Already have an account ?\n\n                "
+              ),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "inline-block font-bold text-indigo hover:text-indigo-darker",
+                  attrs: { to: "/login", exact: "" }
+                },
+                [_vm._v("\n                    Log in now\n                ")]
+              )
+            ],
+            1
+          )
+        ]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -18634,7 +18585,7 @@ var render = function() {
     { staticClass: "h-screen flex justify-center items-center" },
     [
       _c("div", { staticClass: "w-full max-w-xs" }, [
-        _c("h1", { staticClass: "text-center mb-6" }, [_vm._v("Todolist")]),
+        _c("h1", { staticClass: "text-center mb-6" }, [_vm._v("Login")]),
         _vm._v(" "),
         _c(
           "form",
@@ -18745,7 +18696,7 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "btn-indigo",
+                staticClass: "btn btn-primary",
                 class: { "opacity-50 cursor-not-allowed": this.isDisabled },
                 attrs: { type: "submit", disabled: this.isDisabled }
               },
@@ -18781,34 +18732,12 @@ var render = function() {
               1
             )
           ]
-        ),
-        _vm._v(" "),
-        _vm._m(0)
+        )
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "text-center text-grey text-xs" }, [
-      _vm._v("\n            Source code available on "),
-      _c(
-        "a",
-        {
-          staticClass: "text-grey",
-          attrs: {
-            href: "https://github.com/guillaumebriday/todolist-frontend-vuejs"
-          }
-        },
-        [_vm._v("GitHub")]
-      ),
-      _vm._v(".\n        ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {

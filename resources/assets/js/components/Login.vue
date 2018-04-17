@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen flex justify-center items-center">
         <div class="w-full max-w-xs">
-            <h1 class="text-center mb-6">Todolist</h1>
+            <h1 class="text-center mb-6">Login</h1>
 
             <form @submit.prevent="login" @keydown="form.errors.clear($event.target.name)" class="form-card">
                 <div class="mb-4">
@@ -18,7 +18,7 @@
                     <p v-if="form.errors.has('password')" class="text-red text-xs italic">{{ form.errors.get('password') }}</p>
                 </div>
 
-                <button class="btn-indigo" type="submit" :disabled="this.isDisabled" :class="{ 'opacity-50 cursor-not-allowed': this.isDisabled }">
+                <button class="btn btn-primary" type="submit" :disabled="this.isDisabled" :class="{ 'opacity-50 cursor-not-allowed': this.isDisabled }">
                     <i v-if="isLoading" class="fa fa-spinner fa-spin fa-fw"></i>
                     Sign In
                 </button>
@@ -30,9 +30,6 @@
                     </router-link>
                 </div>
             </form>
-            <p class="text-center text-grey text-xs">
-                Source code available on <a href="https://github.com/guillaumebriday/todolist-frontend-vuejs" class="text-grey">GitHub</a>.
-            </p>
         </div>
     </div>
 </template>

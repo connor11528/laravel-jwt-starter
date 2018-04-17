@@ -13,7 +13,7 @@ let tailwindcss = require('tailwindcss');
 
 mix.js('resources/assets/js/app.js', 'public/js')
 	.sass('resources/assets/sass/index.sass', 'public/css/app.css')
-	.options({
-		processCssUrls: false,
-		postCss: [ tailwindcss('./tailwind.js') ],
-	});
+	// .options({
+	// 	processCssUrls: false,
+	// 	postCss: [ tailwindcss('./tailwind.js') ],
+	// });

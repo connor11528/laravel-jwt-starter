@@ -1,20 +1,26 @@
 <template>
-    <nav>
+    <nav class="navbar">
         <router-link to="/" exact>
             Home
         </router-link>
 
-        <div class="pull-right ">
-            <router-link to="/register" exact v-if="!isLogged">
-                Register
-            </router-link>
-            <router-link to="/login" exact v-if="!isLogged">
-                Login
-            </router-link>
-            <div @click="logout" v-if="isLogged">
-                Logout
-            </div>
-        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <router-link to="/register" exact v-if="!isLogged" class="nav-link">
+                    Register
+                </router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/login" exact v-if="!isLogged" class="nav-link">
+                    Login
+                </router-link>
+            </li>
+            <li class="nav-item text-nowrap">
+                <div @click="logout" v-if="isLogged" class="nav-link">
+                    Logout
+                </div>
+            </li>
+        </ul>
     </nav>
 </template>
 
