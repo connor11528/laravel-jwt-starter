@@ -1,24 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import axios from 'axios'
-import Navbar from './components/Navbar'
+window._ = require('lodash');
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:8000'
+try {
+	window.$ = window.jQuery = require('jquery');
+} catch (e) {
+	console.error(e);
+}
 
-window.axios = axios
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+let token = document.head.querySelector('meta[name="csrf-token"]');
 
-Vue.config.productionTip = false
-
-Vue.use(VueRouter)
-
-Vue.component('Navbar', Navbar)
-
-Vue.directive('focus', {
-	inserted (el) {
-		el.focus()
-	}
-})
-
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.localStorage.token
-axios.defaults.baseURL = `${BASE_URL}/api/`
+if (token) {
+	window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+	console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}

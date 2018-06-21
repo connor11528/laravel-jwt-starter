@@ -15,8 +15,3 @@
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 
-<!-- Scripts -->
-<script type="text/javascript">
-	window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
-</script>
-<script type="text/javascript" src="js/app.js"></script>
