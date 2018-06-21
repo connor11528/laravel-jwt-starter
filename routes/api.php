@@ -13,20 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::prefix('auth')->group(function(){
-    // Registration Routes...
-    Route::post('register', 'RegisterController@register');
-
-    // JWT Routes
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
+    Route::get('/user', function( Request $request ){
+        return $request->user();
+    });
 });
-
-Route::middleware('auth:api')->group(function () {
-    Route::ApiResource('tasks', 'TasksController');
-    Route::delete('tasks', 'TasksController@deleteCompletedTasks');
-});
-
-Route::apiResource('companies', 'CompanyController');
