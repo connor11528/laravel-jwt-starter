@@ -17,4 +17,9 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     Route::get('/user', function( Request $request ){
         return $request->user();
     });
+
+    Route::get('/cafes', 'API\CafeController@index');
+    Route::post('/cafes', 'API\CafeController@store');
+    Route::get('/cafes/{id}', 'API\CafeController@show');
+
 });
